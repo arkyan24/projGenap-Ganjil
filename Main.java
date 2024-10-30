@@ -1,10 +1,9 @@
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Membuat objek pelanggan dengan input dinamis
+        // Input dinamis
         System.out.print("Masukkan nama pelanggan: ");
         String namaPelanggan = scanner.nextLine();
         System.out.print("Masukkan kontak pelanggan: ");
@@ -19,14 +18,14 @@ public class Main {
             System.out.println("3. Keluar");
             System.out.print("Pilih opsi: ");
             int pilihan = scanner.nextInt();
-            scanner.nextLine(); // Membersihkan newline
+            scanner.nextLine();
 
             switch (pilihan) {
                 case 1:
                     // Input data kendaraan
                     System.out.print("Masukkan jenis kendaraan (1: Mobil, 2: Motor): ");
                     int jenisKendaraan = scanner.nextInt();
-                    scanner.nextLine(); // Membersihkan newline
+                    scanner.nextLine();
                     System.out.print("Masukkan nomor plat: ");
                     String nomorPlat = scanner.nextLine();
                     System.out.print("Masukkan merk kendaraan: ");
@@ -43,8 +42,8 @@ public class Main {
                         kendaraan = new Motor(nomorPlat, merk, tipe);
                     }
 
-                    // Input data layanan
-                    System.out.print("Masukkan jenis layanan (contoh: Penggantian Oli): ");
+                    // Input layanan
+                    System.out.print("Masukkan jenis layanan : ");
                     String namaLayanan = scanner.nextLine();
                     RiwayatServis servis = new RiwayatServis(namaLayanan, kendaraan);
 
@@ -59,7 +58,7 @@ public class Main {
                     break;
 
                 case 3:
-                    // Keluar dari program
+                    // Keluar program
                     System.out.println("Terima kasih telah menggunakan sistem ini.");
                     program = false;
                     break;
@@ -69,6 +68,5 @@ public class Main {
                     break;
             }
         }
-//        scanner.close();
     }
 }
